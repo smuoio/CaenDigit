@@ -2,6 +2,7 @@
 *\file Board742.h
 *\author Salvatore Muoio
 */
+
 #ifndef __BOARD_742_H__
 #define __BOARD_742_H__
 
