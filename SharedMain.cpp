@@ -1,8 +1,6 @@
 #include <iostream>
 #include "SharedMemory.h"
 #include "Trace.h"
-//#include "Board742.h"
-//#include "Board752.h"
 
 using namespace std;
 
