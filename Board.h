@@ -7,6 +7,8 @@
 
 /**
 *\class Board
+*\brief the class is the interface to other Caen board.
+*\      the class is built with pure virtual function
 */
 class Board
 {
@@ -17,6 +19,9 @@ class Board
 	virtual void ComputingMax(void) = 0;
 	virtual ~Board(void){};
 };
-// pointer to class Board!!
+/**
+*\var Board *pBoard
+*\brief pointer to class interface
+*/
 extern Board *pBoard;
 #endif
