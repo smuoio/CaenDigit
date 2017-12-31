@@ -12,6 +12,7 @@ int main (void)
 	{
 		//todo
 		trace::TraceInfo("create shared memory ok", true);
+		// fill array
 	}
 	// check the board!!!!
 	// in according with the board we have to instantiate the correct object

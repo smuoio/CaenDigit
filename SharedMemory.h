@@ -39,7 +39,7 @@ namespace shared_memory
     typedef struct
     {
     	types::FLOAT32 Buff[constant::channel_742][constant::events_742];
-    }t_DataGroup;	
+    }t_DataGroup;
 
     typedef struct
     {
@@ -50,20 +50,20 @@ namespace shared_memory
     {
         types::UINT16 Buff[constant::channel_752][constant::events_752]; /*!< data buffer */
     }t_Data752;
-    
+
     typedef struct
     {
    	e_BoardCaen board; /*!< type of board used from the caen */
    	types::INT32 ctrl;
    	types::INT32 master;
    	t_Data742 data742[2];
-   	t_Data752 data752;
+   	t_Data752 data752[2];
     }t_sharedmemory;
-    
-    
+
+
 }//namespace shared_memory
 
-class SharedMemory 
+class SharedMemory
 {
 	private:
 	key_t key_SharedMemory;
@@ -75,8 +75,9 @@ class SharedMemory
 	static shared_memory::t_sharedmemory *pSharedMemory;
 	shared_memory::t_sharedmemory *getsharedmemory(void) const;
 	// debug
-	void SetCaenBoard(){pSharedMemory->board = shared_memory::Board_X742;};
+	void SetCaenBoard(void){pSharedMemory->board = shared_memory::Board_X742;};
 	void SetSharedMemory(void);
+  void CreateData(void);
 	// debug
 	void CheckBoard(void);
 	shared_memory::e_SharedMemory Create_SharedMemory(void);
