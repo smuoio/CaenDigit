@@ -1,5 +1,6 @@
 /**
 *\file SharedMemory.h
+* \the file manages all the methods declared in the class Shared Memory
 *\author Salvatore Muoio
 */
 #ifndef __SHARED_MEMRY_H__
@@ -20,9 +21,9 @@ namespace shared_memory
 */
     typedef enum
     {
-    	SHARED_MEMORY_OK,
-    	SHARED_MEMORY_ERROR_SHMGET,
-    	SHARED_MEMORY_ERROR_SHMAT,
+    	SHARED_MEMORY_OK,          /*!< creation shared memory without error*/
+    	SHARED_MEMORY_ERROR_SHMGET,/*!< error in the creation shared memory*/
+    	SHARED_MEMORY_ERROR_SHMAT,/*!< error in the attach the pointer to the shared memory*/
     }e_SharedMemory;
 
 /*
@@ -35,29 +36,41 @@ namespace shared_memory
         Board_X752    = 2,      /*!< borad X752 */
         Board_UNKNOWN = 0xFFFF, /*!< borad unknown */
     }e_BoardCaen;
-// create the shared memory
+    /*
+    *\struct t_DataGroup
+    *\brief definition float used for the X742 board
+    */
     typedef struct
     {
-    	types::FLOAT32 Buff[constant::channel_742][constant::events_742];
+    	types::FLOAT32 Buff[constant::channel_742][constant::events_742]; /*!< float */
     }t_DataGroup;
-
+    /*
+    *\struct t_Data742
+    *\brief definition of structure used for the X742 board
+    */
     typedef struct
     {
-    	t_DataGroup DataGroup[2];
+    	t_DataGroup DataGroup[2]; /*!< DataGroup */
     }t_Data742;
-
+    /*
+    *\struct t_Data752
+    *\brief definition of structure used for the Board_X752 board
+    */
     typedef struct
     {
         types::UINT16 Buff[constant::channel_752][constant::events_752]; /*!< data buffer */
     }t_Data752;
-
+    /*
+    *\struct t_sharedmemory
+    *\brief definition of structure of shared memory
+    */
     typedef struct
     {
-   	e_BoardCaen board; /*!< type of board used from the caen */
-   	types::INT32 ctrl;
-   	types::INT32 master;
-   	t_Data742 data742[2];
-   	t_Data752 data752[2];
+   	  e_BoardCaen board;    /*!< type of board used from the caen */
+   	  types::INT32 ctrl;    /*!< type control  */
+   	  types::INT32 master;  /*!< type master */
+   	  t_Data742 data742[2]; /*!< type data 742 board */
+   	  t_Data752 data752[2]; /*!< type data 752 board */
     }t_sharedmemory;
 
 
@@ -83,9 +96,6 @@ class SharedMemory
 	shared_memory::e_SharedMemory Create_SharedMemory(void);
 	virtual ~SharedMemory(void){};
 }; //class
-
-
-
 
 
 #endif
