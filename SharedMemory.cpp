@@ -1,7 +1,7 @@
 /**
-*\file SharedMemory.cpp
+* \file SharedMemory.cpp
 * \the file manages all the methods declared in the class Shared Memory
-*\Author Salvatore Muoio
+* \Author Salvatore Muoio
 */
 #include <iostream>
 #include <errno.h>
@@ -97,9 +97,4 @@ void SharedMemory::CheckBoard(void)
 shared_memory::e_BoardCaen SharedMemory::ReadBoard(void)
 {
 	return(pSharedMemory->board);
-}
-
-void SharedMemory::SetSharedMemory(void)
-{
-	// fill the buffer
 }

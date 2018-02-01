@@ -7,7 +7,6 @@
 #include "Trace.h"
 
 
-
 void mathematic::CheckFunction(void)
 {
 	//
@@ -15,4 +14,10 @@ void mathematic::CheckFunction(void)
 	// read the data from the shared memory!!!
 	trace::TraceInfo("Mathematic::CheckFunction\n", true);
 	//read shared memory buffer
+}
+
+types::INT32 mathematic::CheckMax(types::FLOAT32 aVal)
+{
+	// chek max value
+	Max = SetMax(Max, aVal);
 }

@@ -50,7 +50,7 @@ namespace shared_memory
     */
     typedef struct
     {
-    	t_DataGroup DataGroup[2]; /*!< DataGroup */
+    	t_DataGroup DataGroup[constant::size_shared]; /*!< DataGroup */
     }t_Data742;
     /*
     *\struct t_Data752
@@ -69,8 +69,8 @@ namespace shared_memory
    	  e_BoardCaen board;    /*!< type of board used from the caen */
    	  types::INT32 ctrl;    /*!< type control  */
    	  types::INT32 master;  /*!< type master */
-   	  t_Data742 data742[2]; /*!< type data 742 board */
-   	  t_Data752 data752[2]; /*!< type data 752 board */
+   	  t_Data742 data742[constant::size_shared]; /*!< type data 742 board */
+   	  t_Data752 data752[constant::size_shared]; /*!< type data 752 board */
     }t_sharedmemory;
 
 

@@ -4,7 +4,7 @@
 */
 #ifndef __BOARD_H__
 #define __BOARD_H__
-
+#include "Types.h"
 /**
 *\class Board
 *\brief the class is the interface to other Caen board.
@@ -13,6 +13,7 @@
 class Board
 {
 	private:
+		types::INT32 BaseLine;
 	protected:
 	public:
 	Board(){};
