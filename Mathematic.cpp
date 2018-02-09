@@ -21,3 +21,8 @@ types::INT32 mathematic::CheckMax(types::FLOAT32 aVal)
 	// chek max value
 	Max = SetMax(Max, aVal);
 }
+
+types::FLOAT32 mathematic::GetMax(void)const
+{
+	return(Max);
+}

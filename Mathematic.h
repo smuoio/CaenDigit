@@ -30,12 +30,13 @@ class mathematic: public SharedMemory
 	{
 		return( (abs(Max)>abs(aVal)) ? (abs(Max)) : (abs(aVal))) ;
 	}
+	types::FLOAT32 Max;
 	protected:
 	public:
-	types::FLOAT32 Max;
 	mathematic(){};
 	void CheckFunction(void);
 	types::INT32 CheckMax(types::FLOAT32 aVal);
+	types::FLOAT32 GetMax(void)const;
 	virtual ~mathematic(){};
 };
 
