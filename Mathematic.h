@@ -1,5 +1,6 @@
 /**
 *\file Mathematic.h
+*\brief the file contains the mathematic class
 *\author Salvatore Muoio
 */
 #ifndef __MATHEMATIC_H__
@@ -12,9 +13,9 @@ namespace math
 {
 	typedef enum
 	{
-		Unknown,
-		Increrasing,
-		Decreasing,
+		Unknown,      /*< unknown function*/
+		Increrasing,  /*< increasing function*/
+		Decreasing,   /*< decreasing function*/
 	}e_functionstatus;
 }//namespace math
 
@@ -25,13 +26,13 @@ class mathematic: public SharedMemory
 	math::e_functionstatus isfunctionincreasing(types::FLOAT32 *pBuff);
 	math::e_functionstatus isfunctiondecreasing(types::FLOAT32 *pBuff);
 	types::FLOAT32 firstderivative(types::FLOAT32 *pBuff);
-	types::FLOAT32 Max;
 	inline types::FLOAT32 SetMax(types::FLOAT32 Max, types::FLOAT32 aVal)
 	{
 		return( (abs(Max)>abs(aVal)) ? (abs(Max)) : (abs(aVal))) ;
 	}
 	protected:
 	public:
+	types::FLOAT32 Max;
 	mathematic(){};
 	void CheckFunction(void);
 	types::INT32 CheckMax(types::FLOAT32 aVal);

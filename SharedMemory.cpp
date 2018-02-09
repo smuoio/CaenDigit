@@ -69,10 +69,10 @@ void SharedMemory::SetSharedMemory(void)
 
 shared_memory::t_sharedmemory* SharedMemory::getsharedmemory(void) const
 {
-	trace::TraceInfo("SharedMemory::pre_getsharedmemory", true);
+	//trace::TraceInfo("SharedMemory::pre_getsharedmemory", true);
 	if(pSharedMemory != 0)
 	{
-		trace::TraceInfo("SharedMemory::post_getsharedmemory", true);
+		//trace::TraceInfo("SharedMemory::post_getsharedmemory", true);
 		return(pSharedMemory);
 	}
 }

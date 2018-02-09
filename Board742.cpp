@@ -28,6 +28,7 @@ void Board742::ComputingMax(void)
 			{
 				// check max
 				pmath->CheckMax(pshared->data742[smIndex].DataGroup[ii].Buff[jj][tt]);
+				trace::TraceInfo("Max relative = \n",pmath->Max);
 			}//for tt
 		}// for jj
 	}//for ii
