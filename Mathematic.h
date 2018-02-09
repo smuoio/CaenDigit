@@ -37,6 +37,7 @@ class mathematic: public SharedMemory
 	void CheckFunction(void);
 	types::INT32 CheckMax(types::FLOAT32 aVal);
 	types::FLOAT32 GetMax(void)const;
+	void ResetMax(void){ Max = 0;};
 	virtual ~mathematic(){};
 };
 

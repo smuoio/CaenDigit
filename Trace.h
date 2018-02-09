@@ -10,8 +10,8 @@ namespace trace
 {
 	typedef enum
 	{
-		basic, 
-		verbose,
+		basic,    /*< basic level*/
+		verbose,  /*< verbose level*/
 	}e_tracelevel;
 
 	template <class TraceString, class TraceType> void TraceInfo(TraceString &string, TraceType info)

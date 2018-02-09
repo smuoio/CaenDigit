@@ -12,6 +12,19 @@ Board742::Board742(void)
 	pmath = new(mathematic);
 }
 
+void Board742::SetMaxToChann(types::FLOAT32  const aMax,
+									           types::FLOAT32 *const pMaxBuffer)
+{
+	if(pMaxBuffer != 0)
+	{
+		*pMaxBuffer = aMax;
+		// clean max value
+		//*aMax = 0;
+		pmath->ResetMax();
+	}
+}
+
+
 void Board742::ComputingMax(void)
 {
 	shared_memory::t_sharedmemory *pshared;
@@ -29,7 +42,9 @@ void Board742::ComputingMax(void)
 				// check max
 				pmath->CheckMax(pshared->data742[smIndex].DataGroup[ii].Buff[jj][tt]);
 			}//for tt
-			trace::TraceInfo("Max relative = \n",pmath->GetMax());
+			//trace::TraceInfo("Max relative = \n",pmath->GetMax());
+			// set the max for each channel
+			SetMaxToChann(pmath->GetMax(), &MaxBuffer[ii][jj]);
 		}// for jj
 	}//for ii
 }
