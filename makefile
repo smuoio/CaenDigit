@@ -8,15 +8,17 @@ SRCS = SharedMain.cpp SharedMemory.cpp Board.cpp Board742.cpp Board752.cpp Trace
 INCPATH = -I./
 
 # Define the -L library path(s)
-LDFLAGS =
+LDFLAGS =-fprofile-arcs -ftest-coverage
 
 # Define the -l library name(s)
 LIBS =
 
 # Only in special cases should anything be edited below this line
 OBJS      = $(CPP_SRCS:.cpp=.o)
-CXXFLAGS  = -g -Wall -ansi -pedantic
+CXXFLAGS  = -g -Wall -ansi -pedantic -fprofile-arcs -ftest-coverage
 DEP_FILE  = .depend
+GOV       = *.gcno
+HTML      = *.html
 
 
 .PHONY = all clean distclean
@@ -49,6 +51,8 @@ clean:
 distclean: clean
 	$(RM) $(BIN)
 	$(RM) $(DEP_FILE)
+	$(RM) $(GOV)
+	$(RM) $(HTML)
 
 
 # For determining source file dependencies
@@ -64,4 +68,7 @@ ifeq (,$(findstring clean,$(MAKECMDGOALS)))
 ifeq (,$(findstring distclean,$(MAKECMDGOALS)))
 -include $(DEP_FILE)
 endif
-endif 	
+endif
+
+gcov:
+	gcovr -r . --html -o coverage.html --html-details
