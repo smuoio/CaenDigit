@@ -17,7 +17,7 @@ LIBS =
 OBJS      = $(CPP_SRCS:.cpp=.o)
 CXXFLAGS  = -g -Wall -ansi -pedantic -fprofile-arcs -ftest-coverage
 DEP_FILE  = .depend
-GOV       = *.gcno
+GCOV      = *.gcno
 HTML      = *.html
 
 
@@ -51,7 +51,7 @@ clean:
 distclean: clean
 	$(RM) $(BIN)
 	$(RM) $(DEP_FILE)
-	$(RM) $(GOV)
+	$(RM) $(GCOV)
 	$(RM) $(HTML)
 
 
