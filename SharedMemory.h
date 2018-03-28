@@ -81,16 +81,16 @@ class SharedMemory
 	private:
 	key_t key_SharedMemory;
 	shared_memory::e_BoardCaen ReadBoard(void);
-	static SharedMemory *plShared;
-	public:
-	SharedMemory();
-	static SharedMemory *Instance(void);
+	//static SharedMemory *plShared;
+  public:
+  SharedMemory();
+	static SharedMemory& Instance(void);
 	static shared_memory::t_sharedmemory *pSharedMemory;
 	shared_memory::t_sharedmemory *getsharedmemory(void) const;
 	// debug
+  void SetSharedMemory(void);
 	void SetCaenBoard(void){pSharedMemory->board = shared_memory::Board_X742;};
-	void SetSharedMemory(void);
-  void CreateData(void);
+	void CreateData(void);
 	// debug
 	void CheckBoard(void);
 	shared_memory::e_SharedMemory Create_SharedMemory(void);

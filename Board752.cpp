@@ -3,6 +3,7 @@
 *\author Salvatore Muoio
 */
 #include "Board752.h"
+#include "Mathematic.h"
 #include "Trace.h"
 
 Board752::Board752(void)

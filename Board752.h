@@ -6,7 +6,7 @@
 #define __BOARD_752_H__
 
 #include "Board.h"
-#include "Mathematic.h"
+class mathematic;
 
 class Board752: public Board
 {

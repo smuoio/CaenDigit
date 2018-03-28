@@ -17,7 +17,7 @@
 
 using namespace std;
 // initialiying of static pointer
-SharedMemory* SharedMemory::plShared = 0;
+//SharedMemory* SharedMemory::plShared = 0;
 shared_memory::t_sharedmemory * SharedMemory:: pSharedMemory = 0;
 
 SharedMemory::SharedMemory()
@@ -28,12 +28,13 @@ SharedMemory::SharedMemory()
 
 }
 
-SharedMemory* SharedMemory::Instance(void)
+SharedMemory& SharedMemory::Instance(void)
 {
 	trace::TraceInfo("SharedMemory::Instance", true);
-	if(plShared == 0)
-	 plShared = new(SharedMemory);
-	return(plShared);
+	static SharedMemory obj_SharedMemory;
+	//if(plShared == 0)
+	// plShared = new(SharedMemory);
+	return(obj_SharedMemory);
 }
 
 shared_memory::e_SharedMemory SharedMemory::Create_SharedMemory(void)

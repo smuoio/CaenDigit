@@ -4,6 +4,7 @@
 *\author Salvatore Muoio
 */
 #include "Board742.h"
+#include "Mathematic.h"
 #include "Trace.h"
 
 Board742::Board742(void)

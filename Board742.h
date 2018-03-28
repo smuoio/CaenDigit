@@ -7,9 +7,9 @@
 #define __BOARD_742_H__
 
 #include "Board.h"
-#include "Mathematic.h"
+//#include "Mathematic.h"
 #include "SharedMemory.h"
-
+class mathematic;
 class Board742: public Board, public SharedMemory
 {
 	private:

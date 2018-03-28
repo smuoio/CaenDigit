@@ -2,7 +2,7 @@
 BIN = Computing
 
 # Define source files
-SRCS = SharedMain.cpp SharedMemory.cpp Board.cpp Board742.cpp Board752.cpp Trace.cpp Mathematic.cpp
+SRCS = SharedMain.cpp SharedMemory.cpp Board.cpp Board742.cpp Board752.cpp Trace.cpp Mathematic.cpp Constant.cpp
 
 # Define header file paths
 INCPATH = -I./
@@ -33,7 +33,7 @@ all: depend $(BIN)
 #
 $(BIN): $(OBJS)
 	@echo Linking $@
-	@$(CXX) $(SRCS) $(LDFLAGS) $(LIBS) -o $@
+	@$(CXX) -g $(SRCS) $(LDFLAGS) $(LIBS) -o $@
 
 
 # For compiling source file(s)

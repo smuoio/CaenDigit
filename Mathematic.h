@@ -11,6 +11,10 @@
 
 namespace math
 {
+	/*
+	*\struct e_functionstatus
+	*\brief definition of status of function
+	*/
 	typedef enum
 	{
 		Unknown,      /*< unknown function*/

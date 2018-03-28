@@ -13,6 +13,8 @@ namespace constant
 	constexpr types::UINT32 channel_752 = 14;
 	constexpr types::UINT32 events_742  = 1024;
 	constexpr types::UINT32 events_752  = 1030;
+  extern const types::UINT8 test;
+  extern const unsigned char pippo;
 }
 
 
