@@ -47,9 +47,10 @@ class Trace
 	}
 	template <typename T> Trace &operator<<(T const & value)
 	{
-		std::time_t t=std::time(0);
+		std::time_t t = std::time(0);
+		char *dt = ctime(&t);
 		_buffer << value;
-		logfile << value<<t<<std::endl;
+		logfile << value<<dt<<std::endl;
 		return(*this);
 	}
 	~Trace(void)

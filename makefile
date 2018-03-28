@@ -19,6 +19,7 @@ CXXFLAGS  = -g -Wall -ansi -pedantic -fprofile-arcs -ftest-coverage
 DEP_FILE  = .depend
 GCOV      = *.gcno
 HTML      = *.html
+TXT       = *.txt
 
 
 .PHONY = all clean distclean
@@ -53,6 +54,7 @@ distclean: clean
 	$(RM) $(DEP_FILE)
 	$(RM) $(GCOV)
 	$(RM) $(HTML)
+	$(RM) $(TXT)
 
 
 # For determining source file dependencies
